@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическая работа№1</title>
+</head>
+<body>
+    <script>
+
+/*0) создать переменную, узнать ее тип, добавить вывод на экран текста, в зависимости от значения (if else)
+1) запросить у пользователя знак зодиака, и в зависимости от ответа выдать всплывающее окно приветствия (вместо знака зодиака, можно запросить другие данные, предполагающие несколько вариантов ответа) (switch)
+2) вывести все числа от 1 до 40, с использованием 3-х разных циклов
+3) создайте вирусную страницу с постоянно повторяющемся сообщением
+4) Запросить у пользователя любое число больше 5, в случае правильного ответа выдать окошко с поздравлением, в случае неправильного ответа вывести повторное окно с вопросом (помните, что пользователь может нажать "отмена", помните о типах данных)
+5)выведите четные числа от 8 до 20
+6) выведите нечетные числа от 1 до 7, пропустив 5*/
+
+             // 0.
+            let peremennay = "html";
+            let type = typeof(peremennay);
+            if (type === "number") {
+                document.write(peremennay + " is number");
+            } else if (type === "string") {
+                document.write(peremennay + " is string");
+            } else if (type === "undefined") {
+                document.write(peremennay + " is undefined");
+            }
+            else {
+                document.write(peremennay + " is boolean");
+            }       
+
+            // Задание 1
+            let z = prompt();
+            switch (z.toLowerCase()) {
+                case "овен":
+                    alert("Привет, " + z);
+                    break;
+                case "телец":
+                    alert("Привет, " + z);
+                    break;
+                case "близнецы":
+                    alert("Привет, " + z);
+                    break;
+                case "рак":
+                    alert("Привет, " + z);
+                    break;
+                case "лев":
+                    alert("Привет, " + z);
+                    break;
+                case "дева":
+                    alert("Привет, " + z);
+                    break;
+                case "скорпион":
+                    alert("Привет, " + z);
+                    break;
+                case "стрелец":
+                    alert("Привет, " + z);
+                    break;
+                case "козерог":
+                    alert("Привет, " + z);
+                    break;
+                case "водолей":
+                    alert("Привет, " + z);
+                    break;
+                case "рыбы":
+                    alert("Привет, " + z);  
+                    break;
+                default:
+                    break;  
+            }
+            // Задание 2
+            document.write("Цикл FOR:");
+            for (let a = 1; a <= 40; a++) {
+                if (a < 40)
+                    document.write(a + ", ");
+                else 
+                    document.write(a);
+            }
+            document.write("<br>");
+            
+            document.write("Цикл WHILE:");
+            let b = 1;
+            while (b <= 40) {
+                if (b < 40)
+                    document.write(b + ", ");
+                else 
+                    document.write(b);
+                b++;
+            }
+            document.write("<br>");
+            
+            document.write("Цикл DO WHILE:");
+            let c = 1;
+            do {
+                if (c < 40)
+                    document.write(c + ", ");
+                else 
+                    document.write(c);
+                c++;
+            }
+            while (c <= 40);
+            
+            // Задание 3
+            while (true) {
+                alert("Повторяющееся сообщение");
+            }
+            
+            // Задание 4
+            while (true) {
+                let h = Number(prompt());
+                if (h > 5) {
+                    alert("Поздравляю!");
+                    break;
+                }
+                else {
+                    alert("Введите корректный запрос (> 5)!");
+                }
+            } 
+            // Задание 5
+            for (let i = 8; i <= 20; i++) {
+                if (i % 2 == 0) {
+                    if (i == 20)
+                        document.write(i);
+                    else 
+                        document.write(i + ", ");
+                }
+            } 
+            // Задание 6
+            for (let i = 1; i <= 7; i++) {
+                if (i % 2 != 0) {
+                    if (i == 5)
+                        continue;
+                    if (i == 7)
+                        document.write(i);
+                    else 
+                        document.write(i + ", ")
+                }
+            }
+            document.write(".")
+    </script>
+    
+</body>
+</html>
