@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическая работа №2</title>
+</head>
+<body>
+    <script>
+        /*  1) создать массив 3 разными способами
+            2) выведите на экран 5-ый член вашего массива затем измените его значение 
+            3) узнайте длину вашего массива и выведите ее значение при наведении на любой элемент
+            4) выведите все элементы массива, используя цикл for
+            5) создайте 2 массива. Объедините их в один и выведите на экран полученный массив
+            6) Удалите последний член получившегося массива и выведите это значение на экран
+            7) Удалите последний член получившегося массива и выведите это значение на экран
+            8) Добавьте новый элемент в начало вашего объединенного массива
+            9) Получите сегодняшнюю дату и выведите ее на экран
+            10) Выведите сегодняшнюю дату в формате 11 ноября 2020 года
+            11) напишите функцию, подсчитывающую произведение двух случайных чисел в промежутке от нуля до 50
+            */
+        //Задание 1
+            const a1 = new Array(7, 7, 7, 7, 7, 7);
+			const a2 = [3, 1, 2, 4, 15, 122];
+			const a3 = Array.of(1, 2, 3, 4, 5, 6); 
+        //Задание 2
+            document.write("Исходное значение: " + a3[5] + "<br>");
+			a3[5] = 0;
+			document.write("Измененное значение: " + a3[5]);
+        //Задание 3
+			document.write("<br>Длина массива: " + a3.length);
+            document.write("<br>")
+        //Задание 4
+        for (let i = 0; i < a3.length; i++) {
+				document.write(a3[i] + " ");
+			}
+        //Задание 5
+            document.write("<br>")
+            const newMas = [...a1, ...a2];
+			document.write("Полученный массив:<br>");
+			for (let i = 0; i < newMas.length; i++) {
+				document.write(newMas[i] + " ");
+			}
+			document.write("<br><br>");
+        //Задание 6 и 7
+            let lastE = newMas.pop();
+			document.write("Последний элемент:" + lastE + "<br>");
+			
+			document.write("Новый массив 6 задание:<br>");
+			for (let i = 0; i < newMas.length; i++) {
+				document.write(newMas[i] + " ");
+			}
+			document.write("<br><br>");
+			
+			lastE = newMas.pop();
+			document.write("Последний элемент из 6 задания: " + lastE + "<br>");
+			
+			document.write("Новый массив 7 задание:<br>");
+			for (let i = 0; i < newMas.length; i++) {
+				document.write(newMas[i] + " ");
+			}
+			document.write("<br><br>");
+        //Задание 8
+            let newE = 90;
+			document.write("Новый элемент - " + newE + "<br>");
+			newMas.unshift(newE);
+			document.write("Новый массив:<br>");
+			for (let i = 0; i < newMas.length; i++) {
+				document.write(newMas[i] + " ");
+			} 
+        //Задание 9
+            let now = new Date();
+            document.write("<br><br>");
+			document.write(now);
+            document.write("<br><br>");
+        //Задание 10
+			const months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+			let jDate = new Date();
+			let TekDate = jDate.getDate() + " " + months[jDate.getMonth()] + " " + jDate.getFullYear();
+            document.write(TekDate);
+        //Задание 11
+            function RandomChislo() {
+				return Math.floor(Math.random() * 50);
+			}
+            function Multi(h1, h2) {
+				return h1 * h2;
+            }
+            document.write("<br><br>");
+            let a = RandomChislo();
+			let b = RandomChislo();
+			document.write(a + " * " + b + " = " + Multi(a, b));
+	
+    </script>
+    
+</body>
+</html>
